@@ -1,0 +1,62 @@
+@charset "utf-8";
+body {
+    color: white;
+    font-family: "Yu Mincho", serif;
+    margin: 0;
+    padding-top: 60px;
+    background-color: black;
+}
+.fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 200;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+.nav-list {
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li a {
+    color: white;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: #00BFFF;
+}
+h1{
+    text-align: center;
+    font-size: 40px;
+} 
+.name, .number, .address, .access, .time{
+    display: flex;
+    align-items: baseline;
+    gap: 20px;
+    font-size: 20px;
+    max-width: 800px;
+    margin: 15px auto;
+    padding: 0;
+    border-bottom: 1px dashed;
+
+    
+}
+h2{
+    flex: 0 0 30%;
+    margin-right: 15px;
+    font-size: 20px;
+}
+p{
+    flex: 1;
+}
+body{
+    background-image: url(back.jpeg);
+}

@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+/* --- 基本設定と最強の背景固定 --- */
+body {
+    color: white;
+    font-family: "Yu Mincho", serif;
+    margin: 0;
+    padding-top: 60px; /* ヘッダーの高さ分あける */
+    
+    /* ★ここに背景画像を設定することで、どこまでスクロールしても固定されます★ */
+    background-image: url('main.jpeg'); /* 画像ファイル名は適宜合わせてください */
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* 画面に固定 */
+    background-position: center center;
+    background-size: cover; /* 画面全体を覆う */
+}
+
+/* --- 固定ヘッダー --- */
+.fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 200;
+    background: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+}
+
+.nav-list {
+    display: flex;
+    gap: 30px;
+    font-size: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+li a {
+    color: white;
+    text-decoration: none;
+}
+
+li a:hover {
+    color: #00BFFF;
+}
+
+/* --- 1. タイトル画面の設定 --- */
+.title-screen {
+    /* 画面いっぱいの高さを確保 */
+    height: 100vh; 
+    width: 100%;
+    position: relative;
+    /* 背景は透明（bodyの写真が見える） */
+    background-color: transparent; 
+}
+
+h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    writing-mode: vertical-rl;
+    font-size: 80px;
+    margin: 0;
+    /* 写真の上でも文字が見えるように影をつける */
+    text-shadow: 0 0 10px rgba(0,0,0,0.8); 
+}
+
+.slogan {
+    position: absolute;
+    top: 50%;
+    left: 35%; /* タイトルの左側に配置 */
+    transform: translate(-50%, -50%);
+    writing-mode: vertical-rl;
+    font-size: 25px;
+    margin: 0;
+    text-shadow: 0 0 10px rgba(0,0,0,0.8);
+}
+
+/* --- 2. 流れる文章の設定 --- */
+.scroll-text-section {
+    position: relative;
+    /* タイトル画面が終わった後に配置されるので、自然と下から出てきます */
+    padding-bottom: 100px;
+}
+
+.long-text-area {
+    /* 縦書き設定 */
+    writing-mode: vertical-rl;
+    
+    /* 画面の中央に配置 */
+    margin: 0 auto;
+    padding-top: 100px; 
+    
+    /* 画面幅（縦書きなので高さ）をある程度確保 */
+    min-height: 100vh; 
+    width: 90%;
+}
+
+.long-text-area p {
+    font-size: 18px;
+    line-height: 2.5;
+    margin-left: 40px; /* 行間 */
+    
+    /* ★重要★ 写真の上を流れる文字を読みやすくするため、半透明の黒背景をつける */
+    background-color: rgba(0, 0, 0, 0.6); 
+    padding: 20px;
+    border-radius: 10px;
+    text-align: justify;
+}
